@@ -207,7 +207,7 @@ def load_player_data(cpm):
         data = response.get('data')
         if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data:
         
-            print(Colorate.Horizontal(Colors.rainbow, '==========[ GMC DETAILS ]=========='))
+            print(Colorate.Horizontal(Colors.rainbow, '==========[ GMC ]=========='))
             
             print(Colorate.Horizontal(Colors.rainbow, f'Name   : {(data.get("Name") if "Name" in data else "UNDEFINED")}.'))
                 
@@ -229,7 +229,7 @@ def load_key_data(cpm):
 
     data = cpm.get_key_data()
     
-    print(Colorate.Horizontal(Colors.rainbow, '========[ GMC DETAILS ]========'))
+    print(Colorate.Horizontal(Colors.rainbow, '========[GMC ]========'))
     
     print(Colorate.Horizontal(Colors.rainbow, f'Access Key : {data.get("access_key")}.'))
     
@@ -310,36 +310,40 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"]
-            print(Colorate.Horizontal(Colors.rainbow, '{01}: Increase Money           1.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{02}: Increase Coins           3.500K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{03}: King Rank                4.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{04}: Change ID                3.500K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{05}: Change Name              1.00'))
-            print(Colorate.Horizontal(Colors.rainbow, '{06}: Change Name (Rainbow)    1.00'))
-            print(Colorate.Horizontal(Colors.rainbow, '{07}: Number Plates            2.000K'))
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"]
+            print(Colorate.Horizontal(Colors.rainbow, '{01}: Increase Money           1K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{02}: Increase Coins           3.5K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{03}: King Rank                4K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{04}: Change ID                3.5K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{05}: Change Name              100'))
+            print(Colorate.Horizontal(Colors.rainbow, '{06}: Change Name (Rainbow)    100'))
+            print(Colorate.Horizontal(Colors.rainbow, '{07}: Number Plates            2K'))
             print(Colorate.Horizontal(Colors.rainbow, '{08}: Account Delete           FREE'))
-            print(Colorate.Horizontal(Colors.rainbow, '{09}: Account Register          FREE'))
-            print(Colorate.Horizontal(Colors.rainbow, '{10}: Delete Friends           5.00'))
-            print(Colorate.Horizontal(Colors.rainbow, '{11}: Unlock Paid Cars         4.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{12}: Unlock all Cars          3.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{13}: Unlock all Cars Siren    2.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{14}: Unlock w16 Engine        3.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{15}: Unlock All Horns         3.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{16}: Unlock Disable Damage    2.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{17}: Unlock Unlimited Fuel    2.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{18}: Unlock House 3           3.500K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{19}: Unlock Smoke             2.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{20}: Change Race Wins         1.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{21}: Change Race Loses        1.000K'))
-            print(Colorate.Horizontal(Colors.rainbow, '{22}: Clone Account            5.000K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{09}: Account Register         FREE'))
+            print(Colorate.Horizontal(Colors.rainbow, '{10}: Delete Friends           500'))
+            print(Colorate.Horizontal(Colors.rainbow, '{11}: Unlock Paid Cars         4k'))
+            print(Colorate.Horizontal(Colors.rainbow, '{12}: Unlock all Cars          3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{13}: Unlock all Cars Siren    2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{14}: Unlock w16 Engine        3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{15}: Unlock All Horns         3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{16}: Unlock Disable Damage    2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{17}: Unlock Unlimited Fuel    2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{18}: Unlock House 3           3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{19}: Unlock Smoke             2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{20}: Unlock Wheels            4K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{21}: Unlock Animations        2K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{22}: Unlock Equipaments M     3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{23}: Unlock Equipaments F     3K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{24}: Change Race Wins         1K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{25}: Change Race Loses        1K'))
+            print(Colorate.Horizontal(Colors.rainbow, '{26}: Clone Account            5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{0} : Exit'))
             
-            print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌☆ ]==============='))
+            print(Colorate.Horizontal(Colors.rainbow, '===============[ GIDEON ]==============='))
             
             service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
             
-            print(Colorate.Horizontal(Colors.rainbow, '===============[ 𝐂𝐏𝐌☆ ]==============='))
+            print(Colorate.Horizontal(Colors.rainbow, '===============[ GIDEON ]==============='))
             
             if service == 0: # Exit
                 print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channel: @{__CHANNEL_USERNAME__}.'))
@@ -495,7 +499,7 @@ if __name__ == "__main__":
                 if status == 0:
                     print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
                     print(Colorate.Horizontal(Colors.rainbow, '======================================'))
-                    print(Colorate.Horizontal(Colors.rainbow, f'INFO: In order to tweak this account with CPMEwan.'))
+                    print(Colorate.Horizontal(Colors.rainbow, f'INFO: In order to tweak this account with CPMElsedev.'))
                     print(Colorate.Horizontal(Colors.rainbow, 'you most sign-in to the game using this account.'))
                     sleep(2)
                     continue
@@ -640,7 +644,59 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'Please try again.'))
                     sleep(2)
                     continue
-            elif service == 20: # Change Races Wins
+            elif service == 20: # Unlock Smoke
+                console.print("[%] Unlocking Wheels: ", end=None)
+                if cpm.unlock_wheels():
+                    print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
+                    print(Colorate.Horizontal(Colors.rainbow, '======================================'))
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'Please try again.'))
+                    sleep(2)
+                    continue
+            elif service == 21: # Unlock Smoke
+                console.print("[%] Unlocking Animations: ", end=None)
+                if cpm.unlock_animations():
+                    print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
+                    print(Colorate.Horizontal(Colors.rainbow, '======================================'))
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'Please try again.'))
+                    sleep(2)
+                    continue
+            elif service == 22: # Unlock Smoke
+                console.print("[%] Unlocking Equipaments Male: ", end=None)
+                if cpm.unlock_equipments_male():
+                    print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
+                    print(Colorate.Horizontal(Colors.rainbow, '======================================'))
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'Please try again.'))
+                    sleep(2)
+                    continue
+            elif service == 23: # Unlock Smoke
+                console.print("[%] Unlocking Equipaments Female: ", end=None)
+                if cpm.unlock_equipments_female():
+                    print(Colorate.Horizontal(Colors.rainbow, 'SUCCESSFUL'))
+                    print(Colorate.Horizontal(Colors.rainbow, '======================================'))
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
+                    print(Colorate.Horizontal(Colors.rainbow, 'Please try again.'))
+                    sleep(2)
+                    continue
+            elif service == 24: # Change Races Wins
                 print(Colorate.Horizontal(Colors.rainbow, '[!] Insert how much races you win.'))
                 amount = IntPrompt.ask("[?] Amount")
                 console.print("[%] Changing your data: ", end=None)
@@ -661,7 +717,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
                     sleep(2)
                     continue
-            elif service == 21: # Change Races Loses
+            elif service == 25: # Change Races Loses
                 print(Colorate.Horizontal(Colors.rainbow, '[!] Insert how much races you lose.'))
                 amount = IntPrompt.ask("[?] Amount")
                 console.print("[%] Changing your data: ", end=None)
@@ -682,7 +738,7 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
                     sleep(2)
                     continue
-            elif service == 22: # Clone Account
+            elif service == 26: # Clone Account
                 print(Colorate.Horizontal(Colors.rainbow, '[!] Please Enter Account Detalis.'))
                 to_email = prompt_valid_value("[?] Account Email", "Email", password=False)
                 to_password = prompt_valid_value("[?] Account Password", "Password", password=False)
