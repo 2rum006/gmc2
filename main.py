@@ -74,9 +74,9 @@ except Exception as e:
             (255,0,0): Fore.GREEN,
             (0,255,0): Fore.WHITE, 
             (0,0,255): Fore.RED,
-            (255,255,0): Fore.YELLOW,
-            (0,255,255): Fore.CYAN,
-            (255,0,255): Fore.MAGENTA
+            (255,255,0): Fore.GREEN,
+            (0,255,255): Fore.WHITE,
+            (255,0,255): Fore.RED
         }
         result = ""
         if fore in color_map:
