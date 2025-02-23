@@ -40,9 +40,9 @@ try:
     init()
     def color(text, fore=None, back=None):
         color_map = {
-            (255,0,0): Fore.RED,
-            (0,255,0): Fore.GREEN, 
-            (0,0,255): Fore.BLUE,
+            (255,0,0): Fore.GREEN,
+            (0,255,0): Fore.WHITE, 
+            (0,0,255): Fore.RED,
             (255,255,0): Fore.YELLOW,
             (0,255,255): Fore.CYAN,
             (255,0,255): Fore.MAGENTA
