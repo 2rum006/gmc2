@@ -5,7 +5,7 @@ __ENDPOINT_URL__: str = "https://telmunnshop.squareweb.app/api"
 class Pakundo:
     def __init__(self, access_key) -> None:
         self.auth_token = None
-        self.access_key = None
+        self.access_key = Access_key
     
     def login(self, email, password) -> int:
         payload = { "account_email": email, "account_password": password }
