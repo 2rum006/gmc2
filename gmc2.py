@@ -5,7 +5,7 @@ __ENDPOINT_URL__: str = "https://telmunnshop.squareweb.app/api"
 class Pakundo:
     def __init__(self, access_key) -> None:
         self.auth_token = None
-        self.access_key = access_key
+        self.access_key = None
     
     def login(self, email, password) -> int:
         payload = { "account_email": email, "account_password": password }
@@ -214,10 +214,10 @@ class Pakundo:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque) -> bool:
+    def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque):
         payload = {
             "account_auth": self.auth_token,
-            "car_id": self.auth_token,
+            "car_id": car_id,
             "new_hp": new_hp,
             "new_inner_hp": new_inner_hp,
             "new_nm": new_nm,
