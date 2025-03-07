@@ -217,7 +217,7 @@ class Pakundo:
     def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque):
         payload = {
             "account_auth": self.auth_token,
-            "car_id": car_id,
+            "car_id": self.auth_token,
             "new_hp": new_hp,
             "new_inner_hp": new_inner_hp,
             "new_nm": new_nm,
