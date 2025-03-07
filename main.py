@@ -757,7 +757,6 @@ if __name__ == "__main__":
             elif service == 27:
                 console.print("[bold yellow][!] Note[/bold yellow]: original speed can not be restored!.")
                 console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
-                car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
                 new_hp = IntPrompt.ask("[bold][?]Enter New HP[/bold]")
                 new_inner_hp = IntPrompt.ask("[bold][?]Enter New Inner Hp[/bold]")
                 new_nm = IntPrompt.ask("[bold][?]Enter New Torque[/bold]")
