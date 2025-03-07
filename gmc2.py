@@ -214,7 +214,7 @@ class Pakundo:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque):
+    def hack_car_speed(self, new_hp, new_inner_hp, new_nm, new_torque):
         payload = {
             "account_auth": self.auth_token,
             "car_id": 137,
