@@ -1,4 +1,303 @@
-# Auto-Executing Hidden File (Base64)
-import base64
-encoded_data = '''aW1wb3J0IHJlcXVlc3RzCgpfX0VORFBPSU5UX1VSTF9fOiBzdHIgPSAiaHR0cHM6Ly90ZWxtdW5uc2hvcC5zcXVhcmV3ZWIuYXBwL2FwaSIKCmNsYXNzIFBha3VuZG86CiAgICBkZWYgX19pbml0X18oc2VsZiwgYWNjZXNzX2tleSkgLT4gTm9uZToKICAgICAgICBzZWxmLmF1dGhfdG9rZW4gPSBOb25lCiAgICAgICAgc2VsZi5hY2Nlc3Nfa2V5ID0gYWNjZXNzX2tleQogICAgCiAgICBkZWYgbG9naW4oc2VsZiwgZW1haWwsIHBhc3N3b3JkKSAtPiBpbnQ6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfZW1haWwiOiBlbWFpbCwgImFjY291bnRfcGFzc3dvcmQiOiBwYXNzd29yZCB9CiAgICAgICAgcGFyYW1zID0geyAia2V5Ijogc2VsZi5hY2Nlc3Nfa2V5IH0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLnBvc3QoZiJ7X19FTkRQT0lOVF9VUkxfX30vYWNjb3VudF9sb2dpbiIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgaWYgcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIik6CiAgICAgICAgICAgIHNlbGYuYXV0aF90b2tlbiA9IHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJhdXRoIikKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoImVycm9yIikKICAgIAogICAgZGVmIHJlZ2lzdGVyKHNlbGYsIGVtYWlsLCBwYXNzd29yZCkgLT4gaW50OgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2VtYWlsIjogZW1haWwsICJhY2NvdW50X3Bhc3N3b3JkIjogcGFzc3dvcmQgfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L2FjY291bnRfcmVnaXN0ZXIiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgiZXJyb3IiKQogICAgCiAgICBkZWYgZGVsZXRlKHNlbGYpOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4gfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9hY2NvdW50X2RlbGV0ZSIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKCiAgICBkZWYgZ2V0X3BsYXllcl9kYXRhKHNlbGYpIC0+IGFueToKICAgICAgICBwYXlsb2FkID0geyAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9nZXRfZGF0YSIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQKICAgIAogICAgZGVmIHNldF9wbGF5ZXJfcmFuayhzZWxmKSAtPiBib29sOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4gfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3NldF9yYW5rIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgIAogICAgZGVmIGdldF9rZXlfZGF0YShzZWxmKSAtPiBhbnk6CiAgICAgICAgcGFyYW1zID0geyAia2V5Ijogc2VsZi5hY2Nlc3Nfa2V5IH0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLmdldChmIntfX0VORFBPSU5UX1VSTF9ffS9nZXRfa2V5X2RhdGEiLCBwYXJhbXM9cGFyYW1zKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZAogICAgCiAgICBkZWYgc2V0X3BsYXllcl9tb25leShzZWxmLCBhbW91bnQpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsKICAgICAgICAgICAgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiwKICAgICAgICAgICAgImFtb3VudCI6IGFtb3VudAogICAgICAgIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9zZXRfbW9uZXkiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQogICAgCiAgICBkZWYgc2V0X3BsYXllcl9jb2lucyhzZWxmLCBhbW91bnQpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsKICAgICAgICAgICAgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiwKICAgICAgICAgICAgImFtb3VudCI6IGFtb3VudAogICAgICAgIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9zZXRfY29pbnMiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQogICAgCiAgICBkZWYgc2V0X3BsYXllcl9uYW1lKHNlbGYsIG5hbWUpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiwgIm5hbWUiOiBuYW1lIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9zZXRfbmFtZSIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJvayIpCiAgICAKICAgIGRlZiBzZXRfcGxheWVyX2xvY2FsaWQoc2VsZiwgaWQpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiwgImlkIjogaWQgfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3NldF9pZCIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJvayIpCiAgICAKICAgIGRlZiBnZXRfcGxheWVyX2NhcihzZWxmLCBjYXJfaWQpIC0+IGFueToKICAgICAgICBwYXlsb2FkID0geyAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuLCAiY2FyX2lkIjogY2FyX2lkIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9nZXRfY2FyIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgIAogICAgZGVmIGRlbGV0ZV9wbGF5ZXJfZnJpZW5kcyhzZWxmKSAtPiBib29sOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4gfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L2RlbGV0ZV9mcmllbmRzIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgIAogICAgZGVmIHVubG9ja193MTYoc2VsZikgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0geyAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS91bmxvY2tfdzE2IiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgIAogICAgZGVmIHVubG9ja19ob3JucyhzZWxmKSAtPiBib29sOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4gfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3VubG9ja19ob3JucyIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJvayIpCiAgICAKICAgIGRlZiBkaXNhYmxlX2VuZ2luZV9kYW1hZ2Uoc2VsZikgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0geyAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9kaXNhYmxlX2RhbWFnZSIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJvayIpCgogICAgZGVmIHVubGltaXRlZF9mdWVsKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiB9CiAgICAgICAgcGFyYW1zID0geyAia2V5Ijogc2VsZi5hY2Nlc3Nfa2V5IH0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLnBvc3QoZiJ7X19FTkRQT0lOVF9VUkxfX30vdW5saW1pdGVkX2Z1ZWwiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQogICAgCiAgICBkZWYgc2V0X3BsYXllcl93aW5zKHNlbGYsIGFtb3VudCkgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0gewogICAgICAgICAgICAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuLAogICAgICAgICAgICAiYW1vdW50IjogYW1vdW50CiAgICAgICAgfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3NldF9yYWNlX3dpbnMiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQoKICAgIGRlZiBzZXRfcGxheWVyX2xvc2VzKHNlbGYsIGFtb3VudCkgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0gewogICAgICAgICAgICAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuLAogICAgICAgICAgICAiYW1vdW50IjogYW1vdW50CiAgICAgICAgfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3NldF9yYWNlX2xvc2VzIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKCiAgICBkZWYgdW5sb2NrX2hvdXNlcyhzZWxmKSAtPiBib29sOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4gfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3VubG9ja19ob3VzZXMiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQogICAgCiAgICBkZWYgdW5sb2NrX3Ntb2tlKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiB9CiAgICAgICAgcGFyYW1zID0geyAia2V5Ijogc2VsZi5hY2Nlc3Nfa2V5IH0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLnBvc3QoZiJ7X19FTkRQT0lOVF9VUkxfX30vdW5sb2NrX3Ntb2tlIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgIAogICAgZGVmIHVubG9ja19wYWlkX2NhcnMoc2VsZikgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0geyAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS91bmxvY2tfcGFpZF9jYXJzIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgIAogICAgZGVmIHVubG9ja19hbGxfY2FycyhzZWxmKSAtPiBib29sOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4gfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3VubG9ja19hbGxfY2FycyIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJvayIpCiAgICAKICAgIGRlZiB1bmxvY2tfYWxsX2NhcnNfc2lyZW4oc2VsZikgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0geyAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS91bmxvY2tfYWxsX2NhcnNfc2lyZW4iLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQogICAgCiAgICBkZWYgYWNjb3VudF9jbG9uZShzZWxmLCBhY2NvdW50X2VtYWlsLCBhY2NvdW50X3Bhc3N3b3JkKSAtPiBib29sOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4sICJhY2NvdW50X2VtYWlsIjogYWNjb3VudF9lbWFpbCwgImFjY291bnRfcGFzc3dvcmQiOiBhY2NvdW50X3Bhc3N3b3JkIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS9jbG9uZSIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJvayIpCiAgICAKICAgIGRlZiBzZXRfcGxheWVyX3BsYXRlcyhzZWxmKSAtPiBib29sOgogICAgICAgIHBheWxvYWQgPSB7ICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4gfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L3NldF9wbGF0ZXMiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQoKICAgIGRlZiB1bmxvY2tfd2hlZWxzKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiB9CiAgICAgICAgcGFyYW1zID0geyAia2V5Ijogc2VsZi5hY2Nlc3Nfa2V5IH0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLnBvc3QoZiJ7X19FTkRQT0lOVF9VUkxfX30vdW5sb2NrX3doZWVscyIsIHBhcmFtcz1wYXJhbXMsIGRhdGE9cGF5bG9hZCkKICAgICAgICByZXNwb25zZV9kZWNvZGVkID0gcmVzcG9uc2UuanNvbigpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlX2RlY29kZWQuZ2V0KCJvayIpCgogICAgZGVmIHVubG9ja19lcXVpcG1lbnRzX21hbGUoc2VsZikgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0geyAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuIH0KICAgICAgICBwYXJhbXMgPSB7ICJrZXkiOiBzZWxmLmFjY2Vzc19rZXkgfQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdChmIntfX0VORFBPSU5UX1VSTF9ffS91bmxvY2tfZXF1aXBtZW50c19tYWxlIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKCiAgICBkZWYgdW5sb2NrX2VxdWlwbWVudHNfZmVtYWxlKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiB9CiAgICAgICAgcGFyYW1zID0geyAia2V5Ijogc2VsZi5hY2Nlc3Nfa2V5IH0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLnBvc3QoZiJ7X19FTkRQT0lOVF9VUkxfX30vdW5sb2NrX2VxdWlwbWVudHNfZmVtYWxlIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKCiAgICBkZWYgaGFja19jYXJfc3BlZWQoc2VsZiwgbmV3X2hwLCBuZXdfaW5uZXJfaHAsIG5ld19ubSwgbmV3X3RvcnF1ZSkgLT4gYm9vbDoKICAgICAgICBwYXlsb2FkID0gewogICAgICAgICAgICAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuLAogICAgICAgICAgICAiY2FyX2lkIjogY2FyX2lkLAogICAgICAgICAgICAibmV3X2hwIjogbmV3X2hwLAogICAgICAgICAgICAibmV3X2lubmVyX2hwIjogbmV3X2lubmVyX2hwLAogICAgICAgICAgICAibmV3X25tIjogbmV3X25tLAogICAgICAgICAgICAibmV3X3RvcnF1ZSI6IG5ld190b3JxdWUsCiAgICAgICAgfQogICAgICAgIHBhcmFtcyA9IHsgImtleSI6IHNlbGYuYWNjZXNzX2tleSB9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L2hhY2tfY2FyX3NwZWVkIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgIAogICAgZGVmIHVubG9ja19hbmltYXRpb25zKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgcGF5bG9hZCA9IHsgImFjY291bnRfYXV0aCI6IHNlbGYuYXV0aF90b2tlbiB9CiAgICAgICAgcGFyYW1zID0geyAia2V5Ijogc2VsZi5hY2Nlc3Nfa2V5IH0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLnBvc3QoZiJ7X19FTkRQT0lOVF9VUkxfX30vdW5sb2NrX2FuaW1hdGlvbnMiLCBwYXJhbXM9cGFyYW1zLCBkYXRhPXBheWxvYWQpCiAgICAgICAgcmVzcG9uc2VfZGVjb2RlZCA9IHJlc3BvbnNlLmpzb24oKQogICAgICAgIHJldHVybiByZXNwb25zZV9kZWNvZGVkLmdldCgib2siKQoKICAgIGRlZiBtYXhfbWF4MShzZWxmLCBjYXJfaWQsIGN1c3RvbSk6CiAgICAgICAgcGF5bG9hZCA9IHsKICAgICAgICAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuLAogICAgICAgICJjYXJfaWQiOiBjYXJfaWQsCiAgICAgICAgImN1c3RvbSI6IGN1c3RvbSwKICAgICAgICB9CiAgICAgICAgcGFyYW1zID0geyJrZXkiOiBzZWxmLmFjY2Vzc19rZXl9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L21heF9tYXgxIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgICAgICAKICAgIGRlZiBtYXhfbWF4MihzZWxmLCBjYXJfaWQsIGN1c3RvbSk6CiAgICAgICAgcGF5bG9hZCA9IHsKICAgICAgICAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuLAogICAgICAgICJjYXJfaWQiOiBjYXJfaWQsCiAgICAgICAgImN1c3RvbSI6IGN1c3RvbSwKICAgICAgICB9CiAgICAgICAgcGFyYW1zID0geyJrZXkiOiBzZWxmLmFjY2Vzc19rZXl9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L21heF9tYXgyIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKICAgICAgICAKICAgIGRlZiBtaWxsYWdlX2NhcihzZWxmLCBjYXJfaWQsIGN1c3RvbSk6CiAgICAgICAgcGF5bG9hZCA9IHsKICAgICAgICAiYWNjb3VudF9hdXRoIjogc2VsZi5hdXRoX3Rva2VuLAogICAgICAgICJjYXJfaWQiOiBjYXJfaWQsCiAgICAgICAgImN1c3RvbSI6IGN1c3RvbSwKICAgICAgICB9CiAgICAgICAgcGFyYW1zID0geyJrZXkiOiBzZWxmLmFjY2Vzc19rZXl9CiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5wb3N0KGYie19fRU5EUE9JTlRfVVJMX199L21pbGxhZ2VfY2FyIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikKCiAgICBkZWYgYnJha2VfY2FyKHNlbGYsIGNhcl9pZCwgY3VzdG9tKToKICAgICAgICBwYXlsb2FkID0gewogICAgICAgICJhY2NvdW50X2F1dGgiOiBzZWxmLmF1dGhfdG9rZW4sCiAgICAgICAgImNhcl9pZCI6IGNhcl9pZCwKICAgICAgICAiY3VzdG9tIjogY3VzdG9tLAogICAgICAgIH0KICAgICAgICBwYXJhbXMgPSB7ImtleSI6IHNlbGYuYWNjZXNzX2tleX0KICAgICAgICByZXNwb25zZSA9IHJlcXVlc3RzLnBvc3QoZiJ7X19FTkRQT0lOVF9VUkxfX30vYnJha2VfY2FyIiwgcGFyYW1zPXBhcmFtcywgZGF0YT1wYXlsb2FkKQogICAgICAgIHJlc3BvbnNlX2RlY29kZWQgPSByZXNwb25zZS5qc29uKCkKICAgICAgICByZXR1cm4gcmVzcG9uc2VfZGVjb2RlZC5nZXQoIm9rIikK'''
-exec(base64.b64decode(encoded_data).decode('utf-8'))
+import requests
+
+__ENDPOINT_URL__: str = "https://telmunnshop.squareweb.app/api"
+
+class Pakundo:
+    def __init__(self, access_key) -> None:
+        self.auth_token = None
+        self.access_key = access_key
+    
+    def login(self, email, password) -> int:
+        payload = { "account_email": email, "account_password": password }
+        params = { 
+            "key": self.access_key, 
+            "acc_email": email, 
+            "acc_pass": password
+        }
+        response = requests.post(f"{__ENDPOINT_URL__}/account_login", params=params, data=payload)
+        response_decoded = response.json()
+        if response_decoded.get("ok"):
+            self.auth_token = response_decoded.get("auth")
+        return response_decoded.get("error")
+
+    def change_email(self, new_email):
+        payload = {
+            "account_auth": self.auth_token,
+            "new_email": new_email
+        }
+        params = {
+            "key": self.access_key,
+            "new_email": new_email
+        }
+        response = requests.post(f"{__ENDPOINT_URL__}/change_email", params=params, data=payload)
+        response_decoded = response.json()
+        if response_decoded.get("new_token"):
+            self.auth_token = response_decoded["new_token"]
+        return response_decoded.get("ok")
+    
+    def register(self, email, password) -> int:
+        payload = { "account_email": email, "account_password": password }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/account_register", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("error")
+    
+    def delete(self):
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        requests.post(f"{__ENDPOINT_URL__}/account_delete", params=params, data=payload)
+
+    def get_player_data(self) -> any:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/get_data", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded
+    
+    def set_player_rank(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_rank", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def get_key_data(self) -> any:
+        params = { "key": self.access_key }
+        response = requests.get(f"{__ENDPOINT_URL__}/get_key_data", params=params)
+        response_decoded = response.json()
+        return response_decoded
+    
+    def set_player_money(self, amount) -> bool:
+        payload = {
+            "account_auth": self.auth_token,
+            "amount": amount
+        }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_money", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def set_player_coins(self, amount) -> bool:
+        payload = {
+            "account_auth": self.auth_token,
+            "amount": amount
+        }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_coins", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def set_player_name(self, name) -> bool:
+        payload = { "account_auth": self.auth_token, "name": name }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_name", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def set_player_localid(self, id) -> bool:
+        payload = { "account_auth": self.auth_token, "id": id }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_id", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def get_player_car(self, car_id) -> any:
+        payload = { "account_auth": self.auth_token, "car_id": car_id }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/get_car", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def delete_player_friends(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/delete_friends", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_w16(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_w16", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_horns(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_horns", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def disable_engine_damage(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/disable_damage", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def unlimited_fuel(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlimited_fuel", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def set_player_wins(self, amount) -> bool:
+        payload = {
+            "account_auth": self.auth_token,
+            "amount": amount
+        }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_race_wins", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def set_player_loses(self, amount) -> bool:
+        payload = {
+            "account_auth": self.auth_token,
+            "amount": amount
+        }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_race_loses", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def unlock_houses(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_houses", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_smoke(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_smoke", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_paid_cars(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_paid_cars", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_all_cars(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_all_cars", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_all_cars_siren(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_all_cars_siren", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def account_clone(self, account_email, account_password) -> bool:
+        payload = { "account_auth": self.auth_token, "account_email": account_email, "account_password": account_password }
+        params = { 
+            "key": self.access_key, 
+            "acc_email": account_email, 
+            "acc_pass": account_password
+        }
+        response = requests.post(f"{__ENDPOINT_URL__}/clone", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def set_player_plates(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/set_plates", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def unlock_wheels(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_wheels", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def unlock_equipments_male(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_equipments_male", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def unlock_equipments_female(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_equipments_female", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque):
+        payload = {
+            "account_auth": self.auth_token,
+            "car_id": car_id,
+            "new_hp": new_hp,
+            "new_inner_hp": new_inner_hp,
+            "new_nm": new_nm,
+            "new_torque": new_torque,
+        }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/hack_car_speed", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+    
+    def unlock_animations(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{__ENDPOINT_URL__}/unlock_animations", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def max_max1(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/max_max1", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def max_max2(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/max_max2", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def millage_car(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/millage_car", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+
+    def brake_car(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/brake_car", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
